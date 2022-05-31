@@ -1,0 +1,8 @@
+body{
+    @apply text-gray-800;
+}
+
+#main {
+    height: calc(100vh - 80px);
+    overflow: auto;
+}

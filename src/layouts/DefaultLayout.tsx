@@ -1,20 +1,18 @@
+import Header from '@/components/partials/Header';
+import Seo from '@/components/partials/Seo';
 import React from 'react';
 
 type Props = {
+  title: string;
+  description?: string;
   children: React.ReactNode | React.ReactNode[];
 };
 
-const DefaultLayout = ({ children }: Props) => {
+const DefaultLayout = ({ title, description, children }: Props) => {
   return (
     <>
-      <header className="h-16 flex items-center shadow">
-        <div className="container">
-          <h1>
-            <span className="text-2xl text-primary-500 font-semibold">Koran</span>
-            <span className="text-gray-700">.co</span>
-          </h1>
-        </div>
-      </header>
+      <Seo title={title} description={description || 'Koran.co is a platform for reading and listening quran.'} />
+      <Header />
       <main>{children}</main>
     </>
   );

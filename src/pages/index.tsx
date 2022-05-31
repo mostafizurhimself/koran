@@ -1,10 +1,11 @@
+import HeroSection from '@/components/partials/HeroSection';
 import DefaultLayout from '@/layouts/DefaultLayout';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
-    <DefaultLayout>
-      <div></div>
+    <DefaultLayout title="Koran.co">
+      <HeroSection />
     </DefaultLayout>
   );
 };
