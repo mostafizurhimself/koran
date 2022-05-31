@@ -14,3 +14,5 @@ export interface SidebarMenu {
   icon: React.ReactElement;
   href: string;
 }
+
+export type Theme = 'light' | 'dark';
