@@ -3,6 +3,8 @@ import Seo from '@/components/partials/Seo';
 import React from 'react';
 import AppSidebar from '@/components/partials/AppSidebar';
 import AppRightBar from '@/components/partials/AppRightBar';
+import 'overlayscrollbars/css/OverlayScrollbars.css';
+import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 
 type Props = {
   title: string;
@@ -18,9 +20,14 @@ const Dashboard = ({ title, description, children }: Props) => {
         <AppSidebar />
         <div className="flex-grow">
           <AppHeader />
-          <main id="main" className="p-6 bg-gray-100 h-full w-full rounded-t-2xl shadow-inner">
-            {children}
-          </main>
+          <OverlayScrollbarsComponent
+            options={{ scrollbars: { autoHide: 'scroll' } }}
+            style={{ maxHeight: 'calc(100vh - 80px)', borderRadius: '1rem 1rem 0 0' }}
+          >
+            <main id="main" className="p-6 bg-gray-100 w-full rounded-t-2xl shadow-inner">
+              {children}
+            </main>
+          </OverlayScrollbarsComponent>
         </div>
         <AppRightBar />
       </div>
