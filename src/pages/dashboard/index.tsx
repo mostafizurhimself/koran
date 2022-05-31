@@ -1,20 +1,28 @@
-import SearchInput from '@/components/shared/SearchInput';
-import SurahCard from '@/components/shared/SurahCard';
+import SurahList from '@/components/partials/SurahList';
 import AppLayout from '@/layouts/AppLayout';
-import { Surah } from '@/types';
+import { Tab } from '@headlessui/react';
 import { NextPage } from 'next';
-import React, { useState } from 'react';
-const surahs = require('@/public/data/surahs.json') as Surah[];
+import { Fragment } from 'react';
 
 const Dashboard: NextPage = () => {
   return (
     <AppLayout title="Koran.co | Dashboard">
-      {/* <div className="max-w-md mb-6"></div> */}
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {surahs.map((surah, index) => {
-          return <SurahCard key={index} surah={surah} />;
-        })}
-      </div>
+      <Tab.Group>
+        <Tab.List className="tab-list">
+          <Tab as={Fragment}>
+            {({ selected }) => <button className={selected ? 'tab active' : 'tab'}>Surah</button>}
+          </Tab>
+          <Tab as={Fragment}>{({ selected }) => <button className={selected ? 'tab active' : 'tab'}>Para</button>}</Tab>
+          <Tab as={Fragment}>{({ selected }) => <button className={selected ? 'tab active' : 'tab'}>Juz</button>}</Tab>
+        </Tab.List>
+        <Tab.Panels>
+          <Tab.Panel>
+            <SurahList />
+          </Tab.Panel>
+          <Tab.Panel>Content 2</Tab.Panel>
+          <Tab.Panel>Content 3</Tab.Panel>
+        </Tab.Panels>
+      </Tab.Group>
     </AppLayout>
   );
 };

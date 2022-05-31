@@ -6,3 +6,16 @@ body{
     height: calc(100vh - 80px);
     overflow: auto;
 }
+
+/* Tabs */
+.tab-list {
+    @apply flex gap-8 py-3 px-2 border-gray-200 text-sm tracking-wide;
+}
+
+.tab {
+    @apply outline-none ;
+}
+
+.tab.active {
+    @apply text-primary-500 border-primary-500;
+}
