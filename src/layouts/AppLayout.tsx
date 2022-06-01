@@ -26,7 +26,10 @@ const Dashboard = ({ title, description, children }: Props) => {
 
   return (
     <>
-      <Seo title={title} description={description || 'Koran.co is a platform for reading and listening quran.'} />
+      <Seo
+        title={`Koran.co | ${title}`}
+        description={description || 'Koran.co is a platform for reading and listening quran.'}
+      />
       <div className="h-screen flex bg-white dark:bg-gray-800">
         <AppSidebar />
         <div className="flex-grow">

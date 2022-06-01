@@ -8,7 +8,7 @@ import { Fragment } from 'react';
 
 const Dashboard: NextPage = () => {
   return (
-    <AppLayout title="Koran.co | Dashboard">
+    <AppLayout title="Dashboard">
       <div>
         <div className="mb-6">
           <p className="text-sm text-gray-500 dark:text-gray-200">Asslamualaikum</p>

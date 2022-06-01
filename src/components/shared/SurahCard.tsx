@@ -1,6 +1,7 @@
 import { Surah } from '@/types';
 import { HeartIcon } from '@heroicons/react/solid';
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useState, MouseEvent } from 'react';
 import { Heart } from 'react-feather';
 
 type Props = {
@@ -9,17 +10,24 @@ type Props = {
 
 const SurahCard = ({ surah }: Props) => {
   const [isFavorite, setIsFavorite] = useState(false);
+  const router = useRouter();
 
-  const toggleFavorite = () => {
+  const toggleFavorite = (e: MouseEvent) => {
+    e.stopPropagation();
     setIsFavorite(!isFavorite);
   };
+
+  const handleCardClick = (e: MouseEvent) => {
+    router.push(`/surah/${surah.number}`);
+  };
+
   return (
-    <div className="bg-white dark:bg-gray-800 shadow p-4 rounded-2xl hover:bg-gray-50 transition-colors duration-300 cursor-pointer">
+    <div onClick={handleCardClick} className="bg-white dark:bg-gray-800 shadow p-4 rounded-2xl cursor-pointer">
       <div className="flex items-center justify-between">
         <span className="h-7 w-7 flex items-center justify-center bg-primary-50 dark:bg-primary-500 text-primary-500 dark:text-white text-sm rounded-full">
           {surah.number}
         </span>
-        <button onClick={() => toggleFavorite()}>
+        <button onClick={toggleFavorite}>
           {isFavorite ? (
             <HeartIcon className="h-[24px] text-primary-500" />
           ) : (
