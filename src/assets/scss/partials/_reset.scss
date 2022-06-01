@@ -1,5 +1,5 @@
 body{
-    @apply text-gray-800;
+    @apply text-gray-800 dark:text-white;
 }
 
 #main{
@@ -8,13 +8,13 @@ body{
 
 /* Tabs */
 .tab-list {
-    @apply flex justify-between bg-white rounded-full w-full lg:max-w-xl;
+    @apply flex justify-between bg-white dark:bg-gray-800 rounded-full w-full lg:max-w-xl;
 }
 
 .tab {
-    @apply w-full py-2 outline-none text-sm tracking-wide rounded-full;
+    @apply w-full py-2 outline-none text-sm tracking-wide rounded-full text-gray-800 dark:text-white;
 }
 
 .tab.active {
-    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white;
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white ;
 }

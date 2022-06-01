@@ -9,9 +9,9 @@ const rootReducer = combineReducers({
 
 const persistConfig = {
   timeout: 1000,
-  key: 'root',
+  key: 'koran-app',
   storage,
-  // whitelist: ['global', 'auth']
+  whitelist: ['global'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

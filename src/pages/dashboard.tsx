@@ -11,8 +11,8 @@ const Dashboard: NextPage = () => {
     <AppLayout title="Koran.co | Dashboard">
       <div>
         <div className="mb-6">
-          <p className="text-sm text-gray-400">Asslamualaikum</p>
-          <h6 className="text-xl font-semibold">Ahmed Shakil</h6>
+          <p className="text-sm text-gray-500 dark:text-gray-200">Asslamualaikum</p>
+          <h6 className="text-xl font-semibold text-gray-800 dark:text-white">Ahmed Shakil</h6>
         </div>
         <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:hidden">
           <div className="p-6 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl shadow">

@@ -15,7 +15,7 @@ const AppSidebarMenu = ({ menu }: Props) => {
       <a
         className={classNames(
           'h-14 flex justify-center items-center hover:text-primary-500 transition-colors duration-300',
-          router.asPath === menu.href ? 'text-primary-500' : 'text-gray-800'
+          router.asPath === menu.href ? 'text-primary-500' : 'text-gray-800 dark:text-white'
         )}
       >
         {menu.icon}

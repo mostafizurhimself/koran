@@ -13,10 +13,10 @@ const AppRightBar = () => {
         <Link href="/surah">
           <a className="mt-4 flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-semibold">Al Faatiha</h3>
-              <p className="text-sm text-gray-400">Ayah No: 1</p>
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Al Faatiha</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-100">Ayah No: 1</p>
             </div>
-            <AnnotationIcon className="h-16 text-gray-300" />
+            <AnnotationIcon className="h-16 text-gray-800 dark:text-white opacity-10 dark:opacity-25" />
           </a>
         </Link>
       </div>
@@ -25,10 +25,10 @@ const AppRightBar = () => {
         <Link href="/surah">
           <a className="mt-4 flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-semibold">Al Mulk</h3>
-              <p className="text-sm text-gray-400">Ayah No: 3</p>
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Al Mulk</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-100">Ayah No: 3</p>
             </div>
-            <VolumeUpIcon className="h-16 text-gray-300" />
+            <VolumeUpIcon className="h-16 text-gray-800 dark:text-white opacity-10 dark:opacity-25" />
           </a>
         </Link>
       </div>
