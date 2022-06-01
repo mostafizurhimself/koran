@@ -1,6 +1,6 @@
 import { SidebarMenu } from '@/types';
-import React from 'react';
-import { Book, Heart, Home, Users } from 'react-feather';
+import { BookOpenIcon } from '@heroicons/react/outline';
+import { Heart, Home, Settings, Users } from 'react-feather';
 import AppSidebarMenu from './AppSidebarMenu';
 
 const menu: SidebarMenu[] = [
@@ -15,18 +15,18 @@ const menu: SidebarMenu[] = [
     href: '/favorites',
   },
   {
-    name: 'Resiters',
-    icon: <Users height={20} />,
-    href: '/resiters',
+    name: 'Settings',
+    icon: <Settings height={20} />,
+    href: '/settings',
   },
 ];
 
 const AppSidebar = () => {
   return (
-    <div className="w-20 shrink-0">
+    <div className="hidden lg:block w-20 shrink-0">
       <div className="h-20 flex justify-center items-center">
         <div className="h-10 w-10 flex items-center justify-center rounded-full bg-primary-500 text-white">
-          <Book height={16} />
+          <BookOpenIcon height={20} />
         </div>
       </div>
       <div className="mt-4">

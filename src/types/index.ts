@@ -16,3 +16,4 @@ export interface SidebarMenu {
 }
 
 export type Theme = 'light' | 'dark';
+export type Mode = 'reading' | 'listening';

@@ -1,8 +1,13 @@
-import React from 'react';
-import { Bell, Headphones } from 'react-feather';
-import SearchInput from '../shared/SearchInput';
+import { useAppDispatch } from '@/hooks/use-app-dispatch';
+import { useAppSelector } from '@/hooks/use-app-selector';
+import { getMode, getTheme, setMode, setTheme } from '@/store/global/globalSlice';
+import { Book, Headphones, Moon, Sun } from 'react-feather';
+import SearchInput from '@/components/shared/SearchInput';
 
 const AppHeader = () => {
+  const theme = useAppSelector(getTheme);
+  const mode = useAppSelector(getMode);
+  const dispatch = useAppDispatch();
   return (
     <div className="h-20 flex items-center px-4 lg:px-6">
       <h1>
@@ -10,20 +15,22 @@ const AppHeader = () => {
         <span className="text-gray-700">.co</span>
       </h1>
       <div className="ml-auto flex items-center">
-        <div className="w-72">
+        <div className="hidden md:block md:w-96">
           <SearchInput />
         </div>
         <button
           type="button"
+          onClick={() => dispatch(setMode(mode === 'listening' ? 'reading' : 'listening'))}
           className="ml-3 h-8 w-8 flex justify-center items-center border hover:border-primary-500 rounded-full text-gray-800 hover:text-primary-500 focus:border-2 focus:border-primary-500 transition-colors duration-300"
         >
-          <Headphones height={16} />
+          {mode === 'listening' ? <Headphones height={16} /> : <Book height={16} />}
         </button>
         <button
           type="button"
+          onClick={() => dispatch(setTheme(theme === 'light' ? 'dark' : 'light'))}
           className="ml-3 h-8 w-8 flex justify-center items-center border hover:border-primary-500 rounded-full text-gray-800 hover:text-primary-500 focus:border-2 focus:border-primary-500 transition-all duration-300"
         >
-          <Bell height={16} />
+          {theme === 'dark' ? <Sun height={16} /> : <Moon height={16} />}
         </button>
       </div>
     </div>

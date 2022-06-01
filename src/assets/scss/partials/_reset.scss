@@ -2,19 +2,19 @@ body{
     @apply text-gray-800;
 }
 
-// #main {
-//     height: calc(100vh - 80px);
-// }
+#main{
+    min-height: calc(100vh - 80px);
+}
 
 /* Tabs */
 .tab-list {
-    @apply flex gap-8 py-3 px-2 border-gray-200 text-sm tracking-wide;
+    @apply flex justify-between bg-white rounded-full w-full lg:max-w-xl;
 }
 
 .tab {
-    @apply outline-none ;
+    @apply w-full py-2 outline-none text-sm tracking-wide rounded-full;
 }
 
 .tab.active {
-    @apply text-primary-500 border-primary-500;
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white;
 }
