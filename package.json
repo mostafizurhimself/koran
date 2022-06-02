@@ -24,7 +24,6 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-feather": "^2.0.10",
-    "react-h5-audio-player": "^3.8.4",
     "react-laag": "^2.0.4",
     "react-redux": "^8.0.2",
     "redux-persist": "^6.0.0"
