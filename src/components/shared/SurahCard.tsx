@@ -5,7 +5,7 @@ import { useState, MouseEvent } from 'react';
 import { Heart } from 'react-feather';
 
 type Props = {
-  surah: Surah;
+  surah: Omit<Surah, 'edition' | 'ayahs'>;
 };
 
 const SurahCard = ({ surah }: Props) => {

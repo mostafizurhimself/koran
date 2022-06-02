@@ -1,14 +1,5 @@
 import React from 'react';
 
-export interface Surah {
-  number: number;
-  name: string;
-  englishName: string;
-  englishNameTranslation: string;
-  numberOfAyahs: number;
-  revelationType: string;
-}
-
 export interface SidebarMenu {
   name: string;
   icon: React.ReactElement;
@@ -18,11 +9,12 @@ export interface SidebarMenu {
 export type Theme = 'light' | 'dark';
 export type Mode = 'reading' | 'listening';
 
-export interface AyahAudio {
+export interface Ayah {
   number: number;
   audio: string;
   audioSecondary: string[];
   text: string;
+  translation: string;
   numberInSurah: number;
   juz: number;
   manzil: number;
@@ -42,7 +34,13 @@ export interface Edition {
   direction?: any;
 }
 
-export type SurahAudio = Surah & {
-  ayahs: AyahAudio[];
+export interface Surah<T = void> {
+  number: number;
+  name: string;
+  englishName: string;
+  englishNameTranslation: string;
+  numberOfAyahs: number;
+  revelationType: string;
+  ayahs: T extends void ? Ayah[] : T;
   edition: Edition;
-};
+}

@@ -1,7 +1,7 @@
 import { Surah } from '@/types';
 import React from 'react';
 import SurahCard from '@/components/shared/SurahCard';
-const surahs = require('@/public/data/surahs.json') as Surah[];
+const surahs = require('@/public/data/surahs.json') as Omit<Surah, 'edition' | 'ayahs'>[];
 
 const SurahList = () => {
   return (

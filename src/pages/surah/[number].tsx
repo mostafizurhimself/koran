@@ -1,41 +1,55 @@
+import AudioPlayer from '@/components/shared/AudioPlayer';
+import SurahTextPanel from '@/components/shared/SurahTextPanel';
 import AppLayout from '@/layouts/AppLayout';
-import { SurahAudio } from '@/types';
+import { Ayah, Surah } from '@/types';
 import axios from 'axios';
 import { GetServerSideProps, NextPage } from 'next';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 interface Props {
-  surah: SurahAudio;
+  surah: Surah;
 }
 
 const Surah: NextPage<Props> = ({ surah }) => {
-  const audioElement = useRef<HTMLAudioElement>(null);
-
-  const getCurrentAudioUrl = (currentAyah = 1) => {
-    return surah.ayahs[currentAyah - 1].audio;
-  };
-
-  const playNextAudio = () => {
-    const currentAyah = audioElement?.current?.getAttribute('data-ayah') || '1';
-    const nextAyah = parseInt(currentAyah) + 1;
-  };
-
+  const [currentAyah, setCurrentAyah] = useState(1);
   return (
     <AppLayout title="Surah">
-      <audio ref={audioElement} src={getCurrentAudioUrl()} data-ayah="1" autoPlay controls onEnded={playNextAudio}>
-        Your browser does not support HTML5 audio.
-      </audio>
+      <div className="flex flex-col items-center w-full max-w-lg mx-auto">
+        <div>
+          <h1 className="text-2xl font-semibold">
+            {surah.englishName} ({surah.name})
+          </h1>
+        </div>
+        <div className="mt-8">
+          <SurahTextPanel currentAyah={currentAyah} ayahs={surah.ayahs} />
+        </div>
+        <div className="mt-10">
+          <AudioPlayer surah={surah} setCurrentAyah={setCurrentAyah} />
+        </div>
+      </div>
     </AppLayout>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const currentSurah = context.params?.number;
-  const res = await axios.get(`http://api.alquran.cloud/v1/surah/${currentSurah}/ar.abdurrahmaansudais`);
-  const data = (await res.data.data) as SurahAudio;
+  const res = await axios.get(
+    `http://api.alquran.cloud/v1/surah/${currentSurah}/editions/ar.abdurrahmaansudais,en.asad`
+  );
+  const data = (await res.data.data) as [
+    Surah<Omit<Ayah, 'translation'>[]>,
+    Surah<Omit<Ayah, 'audio' | 'audioSecondary' | 'translation'>[]>
+  ];
+  // Merge translation and audio
+  const ayahs = data[0].ayahs.map((ayah, index) => {
+    return {
+      ...ayah,
+      translation: data[1].ayahs[index].text,
+    };
+  });
   return {
     props: {
-      surah: data,
+      surah: { ...data[0], ayahs },
     },
   };
 };
