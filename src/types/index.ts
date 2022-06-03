@@ -44,3 +44,8 @@ export interface Surah<T = void> {
   ayahs: T extends void ? Ayah[] : T;
   edition: Edition;
 }
+
+export interface SelectOption {
+  label: string;
+  value: string;
+}

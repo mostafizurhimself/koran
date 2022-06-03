@@ -19,15 +19,15 @@ const AppHeader = () => {
     }
   };
   return (
-    <div className="h-20 flex items-center px-4 lg:px-6">
+    <div className="h-20 flex justify-between items-center px-4 lg:px-6">
       <h1>
         <span className="text-2xl text-primary-500 font-semibold">Koran</span>
         <span className="text-gray-700 dark:text-white">.co</span>
       </h1>
-      <div className="ml-auto flex items-center">
-        <div className="hidden md:block md:w-96">
-          <SearchInput />
-        </div>
+      <div className="hidden md:block md:w-96">
+        <SearchInput />
+      </div>
+      <div className="flex items-center">
         <button
           type="button"
           onClick={() => dispatch(setMode(mode === 'listening' ? 'reading' : 'listening'))}

@@ -15,7 +15,7 @@ const Button = ({ className, type = 'button', outline = false, children }: Props
         className,
         'text-sm rounded-full hover:transition-colors duration-300',
         outline
-          ? 'border border-primary-500 hover:bg-primary-500 text-primary-500 hover:text-white focus:border-2 focus:border-primary-500'
+          ? 'border border-primary-500 hover:bg-primary-500 text-primary-500 hover:text-white focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500'
           : 'bg-primary-500 hover:bg-primary-600 text-white focus:outline focus:outline-2 focus:outline-primary-500 outline-offset-2'
       )}
       type={type}

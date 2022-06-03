@@ -3,24 +3,24 @@ import React, { useRef } from 'react';
 
 type Props = {
   surah: Surah;
-  from?: number;
-  to?: number;
+  start: number;
+  end: number;
   setCurrentAyah: (currentAyah: number) => void;
 };
 
-const AudioPlayer = ({ surah, from, to, setCurrentAyah }: Props) => {
+const AudioPlayer = ({ surah, start, end, setCurrentAyah }: Props) => {
   const audioElement = useRef<HTMLAudioElement>(null);
 
-  const getCurrentAudioUrl = (currentAyah = 1) => {
+  const getCurrentAudioUrl = (currentAyah = start) => {
     return surah.ayahs[currentAyah - 1].audio;
   };
 
   const playNextAudio = () => {
     if (audioElement.current) {
       // Get current ayah number
-      const currentAyah = audioElement.current.getAttribute('data-ayah') || '1';
+      const currentAyah = audioElement.current.getAttribute('data-ayah') || start.toString();
       // Get next ayah number, if it's the last ayah then play the first ayah
-      const nextAyah = parseInt(currentAyah) < surah.ayahs.length ? parseInt(currentAyah) + 1 : 1;
+      const nextAyah = parseInt(currentAyah) < end ? parseInt(currentAyah) + 1 : start;
       //   const nextAyah = parseInt(currentAyah) < 6 ? parseInt(currentAyah) + 1 : 1;
       // Set the next ayah to the data-ayah attribute
       audioElement.current.setAttribute('data-ayah', nextAyah.toString());
