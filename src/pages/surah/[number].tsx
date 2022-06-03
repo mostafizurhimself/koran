@@ -1,5 +1,5 @@
 import AudioPlayer from '@/components/shared/AudioPlayer';
-import SurahTextPanel from '@/components/shared/SurahTextPanel';
+import SurahPanel from '@/components/shared/SurahPanel';
 import AppLayout from '@/layouts/AppLayout';
 import { Ayah, Surah } from '@/types';
 import axios from 'axios';
@@ -14,16 +14,16 @@ const Surah: NextPage<Props> = ({ surah }) => {
   const [currentAyah, setCurrentAyah] = useState(1);
   return (
     <AppLayout title="Surah">
-      <div className="flex flex-col items-center w-full max-w-lg mx-auto">
+      <div className="w-full max-w-lg mx-auto">
         <div>
-          <h1 className="text-2xl font-semibold">
+          <h1 className="text-2xl font-semibold text-center">
             {surah.englishName} ({surah.name})
           </h1>
         </div>
         <div className="mt-8">
-          <SurahTextPanel currentAyah={currentAyah} ayahs={surah.ayahs} />
+          <SurahPanel currentAyah={currentAyah} ayahs={surah.ayahs} />
         </div>
-        <div className="mt-10">
+        <div className="mt-10 text-center">
           <AudioPlayer surah={surah} setCurrentAyah={setCurrentAyah} />
         </div>
       </div>

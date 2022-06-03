@@ -34,12 +34,9 @@ const AudioPlayer = ({ surah, from, to, setCurrentAyah }: Props) => {
       audioElement.current.play();
     }
   };
-
-  console.log('rendered');
-
   return (
     <audio
-      className=""
+      className="inline-block"
       ref={audioElement}
       src={getCurrentAudioUrl()}
       data-ayah="1"
