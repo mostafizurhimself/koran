@@ -1,10 +1,11 @@
 import Button from '@/components/shared/Button';
-import { AnnotationIcon, VolumeUpIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
+import { FiVolume2 } from 'react-icons/fi';
+import { HiOutlineAnnotation } from 'react-icons/hi';
 
 const AppRightBar = () => {
   return (
-    <div className="hidden lg:block w-60 xl:w-72 px-6 shrink-0">
+    <div className="hidden lg:block w-72 px-6 shrink-0">
       <div className="h-20 flex items-center">
         <Button className="px-4 py-2 ml-auto">Support</Button>
       </div>
@@ -16,7 +17,7 @@ const AppRightBar = () => {
               <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Al Faatiha</h3>
               <p className="text-sm text-gray-500 dark:text-gray-100">Ayah No: 1</p>
             </div>
-            <AnnotationIcon className="h-16 text-gray-800 dark:text-white opacity-10 dark:opacity-25" />
+            <HiOutlineAnnotation size={70} className="text-gray-800 dark:text-white opacity-10 dark:opacity-25" />
           </a>
         </Link>
       </div>
@@ -28,7 +29,7 @@ const AppRightBar = () => {
               <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Al Mulk</h3>
               <p className="text-sm text-gray-500 dark:text-gray-100">Ayah No: 3</p>
             </div>
-            <VolumeUpIcon className="h-16 text-gray-800 dark:text-white opacity-10 dark:opacity-25" />
+            <FiVolume2 size={70} className="text-gray-800 dark:text-white opacity-10 dark:opacity-25" />
           </a>
         </Link>
       </div>

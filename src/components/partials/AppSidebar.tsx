@@ -1,27 +1,27 @@
 import React from 'react';
 import { SidebarMenu } from '@/types';
-import { BookOpenIcon } from '@heroicons/react/outline';
-import { Heart, Home, Settings, Users, XCircle } from 'react-feather';
 import AppSidebarMenu from './AppSidebarMenu';
 import { Transition } from '@headlessui/react';
 import { useAppSelector } from '@/hooks/use-app-selector';
 import { getSidebarState, setSidebarState } from '@/store/sidebar/sidebarSlice';
 import { useAppDispatch } from '@/hooks/use-app-dispatch';
+import { FiHome, FiHeart, FiSettings, FiXCircle } from 'react-icons/fi';
+import { AiOutlineRead } from 'react-icons/ai';
 
 const menu: SidebarMenu[] = [
   {
     name: 'Dashboard',
-    icon: <Home height={20} />,
+    icon: <FiHome size={20} />,
     href: '/dashboard',
   },
   {
     name: 'Favorite',
-    icon: <Heart height={20} />,
+    icon: <FiHeart size={20} />,
     href: '/favorites',
   },
   {
     name: 'Settings',
-    icon: <Settings height={20} />,
+    icon: <FiSettings size={20} />,
     href: '/settings',
   },
 ];
@@ -35,7 +35,7 @@ const AppSidebar = () => {
       <div className="hidden lg:block w-20 shrink-0">
         <div className="h-20 flex justify-center items-center">
           <div className="h-10 w-10 flex items-center justify-center rounded-full bg-primary-500 text-white">
-            <BookOpenIcon height={20} />
+            <AiOutlineRead size={20} />
           </div>
         </div>
         <div className="mt-4">
@@ -81,7 +81,7 @@ const AppSidebar = () => {
               onClick={() => dispatch(setSidebarState(false))}
             >
               <span className="sr-only">Close sidebar</span>
-              <XCircle className="h-8 w-8 text-white" aria-hidden="true" />
+              <FiXCircle className="h-8 w-8 text-white" aria-hidden="true" />
             </button>
           </div>
         </div>

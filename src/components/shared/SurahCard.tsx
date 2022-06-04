@@ -1,8 +1,7 @@
 import { Surah } from '@/types';
-import { HeartIcon } from '@heroicons/react/solid';
 import { useRouter } from 'next/router';
 import { useState, MouseEvent } from 'react';
-import { Heart } from 'react-feather';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
 type Props = {
   surah: Omit<Surah, 'edition' | 'ayahs'>;
@@ -27,11 +26,11 @@ const SurahCard = ({ surah }: Props) => {
         <span className="h-7 w-7 flex items-center justify-center bg-primary-50 dark:bg-primary-500 text-primary-500 dark:text-white text-sm rounded-full">
           {surah.number}
         </span>
-        <button onClick={toggleFavorite}>
+        <button onClick={toggleFavorite} className="h-7 w-7 flex items-center justify-end rounded-full">
           {isFavorite ? (
-            <HeartIcon className="h-[24px] text-primary-500" />
+            <AiFillHeart size={22} className="text-primary-500" />
           ) : (
-            <Heart height={18} className="dark:text-primary-500" />
+            <AiOutlineHeart size={22} className="dark:text-primary-500" />
           )}
         </button>
       </div>

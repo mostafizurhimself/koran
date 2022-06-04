@@ -23,7 +23,8 @@ const Surah: NextPage<Props> = ({ surah }) => {
           <h3 className="text-lg font-semibold text-center mt-2">
             {surah.number}. {surah.englishName} ({surah.englishNameTranslation})
           </h3>
-          <div className="flex justify-between gap-4 text-sm mt-4">
+          {/* <p className="text-sm text-center">Ayah: {surah.numberOfAyahs}</p> */}
+          {/* <div className="flex justify-between gap-4 text-sm mt-4">
             <p>
               <span className="font-semibold">Revelation: </span>
               <span>{surah.revelationType}</span>
@@ -32,7 +33,7 @@ const Surah: NextPage<Props> = ({ surah }) => {
               <span className="font-semibold">Number of Ayah: </span>
               <span>{surah.numberOfAyahs}</span>
             </p>
-          </div>
+          </div> */}
         </div>
         <div className="flex justify-between mt-2 px-3">
           <div>

@@ -1,11 +1,12 @@
 import SurahList from '@/components/partials/SurahList';
 import AppLayout from '@/layouts/AppLayout';
 import { Tab } from '@headlessui/react';
-import { AnnotationIcon, VolumeUpIcon } from '@heroicons/react/outline';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
+import { FiVolume2 } from 'react-icons/fi';
+import { HiOutlineAnnotation } from 'react-icons/hi';
 
 const Dashboard: NextPage = () => {
   return (
@@ -28,7 +29,7 @@ const Dashboard: NextPage = () => {
                     <h3 className="text-lg font-semibold text-white">Al Faatiha</h3>
                     <p className="text-sm text-gray-50">Ayah No: 1</p>
                   </div>
-                  <AnnotationIcon className="h-16 text-gray-200" />
+                  <HiOutlineAnnotation size={70} className="text-gray-200" />
                 </a>
               </Link>
             </div>
@@ -40,7 +41,7 @@ const Dashboard: NextPage = () => {
                     <h3 className="text-lg font-semibold text-white">Al Mulk</h3>
                     <p className="text-sm text-gray-50">Ayah No: 3</p>
                   </div>
-                  <VolumeUpIcon className="h-16 text-gray-200" />
+                  <FiVolume2 size={70} className="text-gray-200" />
                 </a>
               </Link>
             </div>

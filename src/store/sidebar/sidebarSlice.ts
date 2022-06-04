@@ -8,7 +8,7 @@ interface SidebarState {
 
 // Define the initial state using that type
 const initialState: SidebarState = {
-  sidebarOpen: true,
+  sidebarOpen: false,
 };
 
 export const sidebarSlice = createSlice({

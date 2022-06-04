@@ -1,5 +1,6 @@
 import { Surah } from '@/types';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import { BsPauseFill, BsPlayFill } from 'react-icons/bs';
 
 type Props = {
   surah: Surah;
@@ -9,10 +10,28 @@ type Props = {
 };
 
 const AudioPlayer = ({ surah, start, end, setCurrentAyah }: Props) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+
   const audioElement = useRef<HTMLAudioElement>(null);
 
   const getCurrentAudioUrl = (currentAyah = start) => {
     return surah.ayahs[currentAyah - 1].audio;
+  };
+
+  const togglePlayPause = () => {
+    const prevValue = isPlaying;
+    setIsPlaying(!prevValue);
+    if (audioElement.current) {
+      if (!prevValue) {
+        audioElement.current.play();
+        //  animationRef.current = requestAnimationFrame(whilePlaying);
+      } else {
+        audioElement.current.pause();
+        //  cancelAnimationFrame(animationRef.current);
+      }
+    }
   };
 
   const playNextAudio = () => {
@@ -35,17 +54,31 @@ const AudioPlayer = ({ surah, start, end, setCurrentAyah }: Props) => {
     }
   };
   return (
-    <audio
-      className="inline-block"
-      ref={audioElement}
-      src={getCurrentAudioUrl()}
-      data-ayah="1"
-      // autoPlay
-      controls
-      onEnded={playNextAudio}
-    >
-      Your browser does not support HTML5 audio.
-    </audio>
+    <>
+      <audio
+        className="inline-block"
+        ref={audioElement}
+        src={getCurrentAudioUrl()}
+        data-ayah="1"
+        // autoPlay
+        // controls
+        onEnded={playNextAudio}
+      >
+        Your browser does not support HTML5 audio.
+      </audio>
+      <div className="h-16 bg-white dark:bg-gray-800">
+        <div className="flex items-center">
+          <button></button>
+          <button
+            type="button"
+            onClick={togglePlayPause}
+            className="w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center"
+          >
+            {isPlaying ? <BsPauseFill size={25} /> : <BsPlayFill className="ml-[2px]" size={25} />}
+          </button>
+        </div>
+      </div>
+    </>
   );
 };
 
