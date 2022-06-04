@@ -17,13 +17,12 @@ const Surah: NextPage<Props> = ({ surah }) => {
   const [end, setEnd] = useState(surah.numberOfAyahs);
   return (
     <AppLayout title="Surah">
-      <div className="p-6 w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl mx-auto">
-        <div>
+      <div className="p-6 w-full max-w-sm md:max-w-lg lg:max-w-xl mx-auto">
+        <div className="px-3">
           <h1 className="text-2xl font-semibold text-center">{surah.name}</h1>
           <h3 className="text-lg font-semibold text-center mt-2">
             {surah.number}. {surah.englishName} ({surah.englishNameTranslation})
           </h3>
-          {/* <p className="text-center text-gray-600 dark:text-white">{surah.englishNameTranslation}</p> */}
           <div className="flex justify-between gap-4 text-sm mt-4">
             <p>
               <span className="font-semibold">Revelation: </span>
@@ -35,7 +34,7 @@ const Surah: NextPage<Props> = ({ surah }) => {
             </p>
           </div>
         </div>
-        <div className="flex justify-between mt-2">
+        <div className="flex justify-between mt-2 px-3">
           <div>
             <SimpleSelect
               label="Start"
@@ -49,7 +48,7 @@ const Surah: NextPage<Props> = ({ surah }) => {
               })}
             />
           </div>
-          <div>
+          <div className="text-right">
             <SimpleSelect
               label="End"
               defaultValue={end}

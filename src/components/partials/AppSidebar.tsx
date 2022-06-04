@@ -1,7 +1,12 @@
+import React from 'react';
 import { SidebarMenu } from '@/types';
 import { BookOpenIcon } from '@heroicons/react/outline';
-import { Heart, Home, Settings, Users } from 'react-feather';
+import { Heart, Home, Settings, Users, XCircle } from 'react-feather';
 import AppSidebarMenu from './AppSidebarMenu';
+import { Transition } from '@headlessui/react';
+import { useAppSelector } from '@/hooks/use-app-selector';
+import { getSidebarState, setSidebarState } from '@/store/sidebar/sidebarSlice';
+import { useAppDispatch } from '@/hooks/use-app-dispatch';
 
 const menu: SidebarMenu[] = [
   {
@@ -22,19 +27,66 @@ const menu: SidebarMenu[] = [
 ];
 
 const AppSidebar = () => {
+  const sidebarState = useAppSelector(getSidebarState);
+  const dispatch = useAppDispatch();
+
   return (
-    <div className="hidden lg:block w-20 shrink-0">
-      <div className="h-20 flex justify-center items-center">
-        <div className="h-10 w-10 flex items-center justify-center rounded-full bg-primary-500 text-white">
-          <BookOpenIcon height={20} />
+    <>
+      <div className="hidden lg:block w-20 shrink-0">
+        <div className="h-20 flex justify-center items-center">
+          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-primary-500 text-white">
+            <BookOpenIcon height={20} />
+          </div>
+        </div>
+        <div className="mt-4">
+          {menu.map((item, index) => (
+            <AppSidebarMenu menu={item} key={index} />
+          ))}
         </div>
       </div>
-      <div className="mt-4">
-        {menu.map((item, index) => (
-          <AppSidebarMenu menu={item} key={index} />
-        ))}
-      </div>
-    </div>
+
+      {/* Mobile Sidebar */}
+
+      <Transition
+        show={sidebarState}
+        as={React.Fragment}
+        enter="ease-in-out duration-500"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="ease-in-out duration-500"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <div
+          onClick={() => dispatch(setSidebarState(false))}
+          className="fixed inset-0 bg-gray-600 bg-opacity-75 z-10"
+        />
+      </Transition>
+      <Transition
+        show={sidebarState}
+        as={React.Fragment}
+        enter="transition ease-in-out duration-300 transform"
+        enterFrom="-translate-x-full"
+        enterTo="translate-x-0"
+        leave="transition ease-in-out duration-300 transform"
+        leaveFrom="translate-x-0"
+        leaveTo="-translate-x-full"
+      >
+        <div className="h-screen w-60 bg-white dark:bg-gray-800 rounded-r-2xl shadow-lg text-gray-800 dark:text-white fixed inset-0 z-50">
+          <p>Sidebar</p>
+          <div className="absolute top-0 right-0 -mr-10 pt-2">
+            <button
+              type="button"
+              className="ml-1 flex items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              onClick={() => dispatch(setSidebarState(false))}
+            >
+              <span className="sr-only">Close sidebar</span>
+              <XCircle className="h-8 w-8 text-white" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      </Transition>
+    </>
   );
 };
 

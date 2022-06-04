@@ -2,9 +2,11 @@ import { globalSlice } from './global/globalSlice';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { sidebarSlice } from './sidebar/sidebarSlice';
 
 const rootReducer = combineReducers({
   global: globalSlice.reducer,
+  sidebar: sidebarSlice.reducer,
 });
 
 const persistConfig = {

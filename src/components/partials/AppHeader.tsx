@@ -3,6 +3,8 @@ import { useAppSelector } from '@/hooks/use-app-selector';
 import { getMode, getTheme, setMode, setTheme } from '@/store/global/globalSlice';
 import { Book, Headphones, Moon, Sun } from 'react-feather';
 import SearchInput from '@/components/shared/SearchInput';
+import { MenuAlt2Icon } from '@heroicons/react/solid';
+import { setSidebarState } from '@/store/sidebar/sidebarSlice';
 
 const AppHeader = () => {
   const theme = useAppSelector(getTheme);
@@ -20,10 +22,15 @@ const AppHeader = () => {
   };
   return (
     <div className="h-20 flex justify-between items-center px-4 lg:px-6">
-      <h1>
-        <span className="text-2xl text-primary-500 font-semibold">Koran</span>
-        <span className="text-gray-700 dark:text-white">.co</span>
-      </h1>
+      <div className="flex items-center">
+        <button type="button" onClick={() => dispatch(setSidebarState(true))}>
+          <MenuAlt2Icon className="h-6 mr-2 text-gray-700 dark:text-gray-100 inline-block lg:hidden" />
+        </button>
+        <h1>
+          <span className="text-2xl text-primary-500 font-semibold">Koran</span>
+          <span className="text-gray-700 dark:text-white">.co</span>
+        </h1>
+      </div>
       <div className="hidden md:block md:w-96">
         <SearchInput />
       </div>

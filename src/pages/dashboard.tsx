@@ -5,7 +5,6 @@ import { AnnotationIcon, VolumeUpIcon } from '@heroicons/react/outline';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { Fragment } from 'react';
-import 'overlayscrollbars/css/OverlayScrollbars.css';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 
 const Dashboard: NextPage = () => {
@@ -13,7 +12,7 @@ const Dashboard: NextPage = () => {
     <AppLayout title="Dashboard">
       <OverlayScrollbarsComponent
         options={{ scrollbars: { autoHide: 'scroll' } }}
-        style={{ maxHeight: 'calc(100vh - 80px)', borderRadius: '1rem 1rem 0 0' }}
+        style={{ maxHeight: 'calc(100vh - 5rem)', borderRadius: '1rem 1rem 0 0' }}
       >
         <div className="p-6">
           <div className="mb-6">

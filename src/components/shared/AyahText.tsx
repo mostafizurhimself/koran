@@ -23,7 +23,7 @@ const AyahText = ({ ayah, active }: Props) => {
   }, [active]);
 
   return (
-    <div ref={ayahRef} className="relative py-3">
+    <div ref={ayahRef} className="relative p-3">
       <p
         className={classNames(
           'w-6 h-6 text-white bg-primary-500 flex items-center justify-center rounded-full mb-2',
