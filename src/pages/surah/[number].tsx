@@ -23,17 +23,6 @@ const Surah: NextPage<Props> = ({ surah }) => {
           <h3 className="text-lg font-semibold text-center mt-2">
             {surah.number}. {surah.englishName} ({surah.englishNameTranslation})
           </h3>
-          {/* <p className="text-sm text-center">Ayah: {surah.numberOfAyahs}</p> */}
-          {/* <div className="flex justify-between gap-4 text-sm mt-4">
-            <p>
-              <span className="font-semibold">Revelation: </span>
-              <span>{surah.revelationType}</span>
-            </p>
-            <p>
-              <span className="font-semibold">Number of Ayah: </span>
-              <span>{surah.numberOfAyahs}</span>
-            </p>
-          </div> */}
         </div>
         <div className="flex justify-between mt-2 px-3">
           <div>
@@ -65,10 +54,10 @@ const Surah: NextPage<Props> = ({ surah }) => {
             />
           </div>
         </div>
-        <div className="mt-6 flex-grow">
+        <div className="mt-2 flex-grow">
           <SurahPanel currentAyah={currentAyah} ayahs={surah.ayahs} />
         </div>
-        <div className="mt-6 text-center">
+        <div className="mt-4 text-center">
           <AudioPlayer start={start} end={end} surah={surah} setCurrentAyah={setCurrentAyah} />
         </div>
       </div>

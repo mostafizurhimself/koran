@@ -25,7 +25,7 @@ const AppHeader = () => {
     <div className="h-20 flex justify-between items-center px-4 lg:px-6">
       <div className="flex items-center">
         <button type="button" onClick={() => dispatch(setSidebarState(true))}>
-          <HiMenuAlt2 className="h-6 mr-2 text-gray-700 dark:text-gray-100 inline-block lg:hidden" />
+          <HiMenuAlt2 size={25} className="mr-2 text-gray-700 dark:text-gray-100 inline-block lg:hidden" />
         </button>
         <h1>
           <span className="text-2xl text-primary-500 font-semibold">Koran</span>

@@ -12,7 +12,7 @@ const SurahPanel = ({ currentAyah, ayahs }: Props) => {
     <>
       <OverlayScrollbarsComponent
         options={{ scrollbars: { autoHide: 'scroll' } }}
-        style={{ height: 'calc(100vh - 45vh)' }}
+        style={{ height: 'calc(100vh - 27rem)' }}
       >
         {ayahs.map((ayah, index) => {
           return <AyahText key={index} ayah={ayah} active={currentAyah === ayah.numberInSurah} />;
