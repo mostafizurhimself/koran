@@ -33,7 +33,12 @@ const AyahText = ({ ayah, active }: Props) => {
         {ayah.numberInSurah}
       </p>
       <h3 className={classNames('text-lg text-right', active && 'text-primary-500')}>{ayah.text} </h3>
-      <p className={classNames('text-xs mt-2 leading-normal text-gray-800 dark:text-white', active && 'font-semibold')}>
+      <p
+        className={classNames(
+          'text-xs mt-2 leading-normal text-gray-800 dark:text-white',
+          active && 'font-medium italic'
+        )}
+      >
         {ayah.translation}{' '}
       </p>
     </div>

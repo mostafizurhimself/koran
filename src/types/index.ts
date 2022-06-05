@@ -6,8 +6,15 @@ export interface SidebarMenu {
   href: string;
 }
 
-export type Theme = 'light' | 'dark';
-export type Mode = 'reading' | 'listening';
+export enum Theme {
+  LIGHT = 'light',
+  DARK = 'dark',
+}
+
+export enum Mode {
+  READING = 'reading',
+  LISTENING = 'listening',
+}
 
 export interface Ayah {
   number: number;

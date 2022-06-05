@@ -5,6 +5,7 @@ import AppSidebar from '@/components/partials/AppSidebar';
 import AppRightBar from '@/components/partials/AppRightBar';
 import { useAppSelector } from '@/hooks/use-app-selector';
 import { getTheme } from '@/store/global/globalSlice';
+import { SearchProvider } from '@/context/SearchContext';
 
 type Props = {
   title: string;
@@ -30,15 +31,17 @@ const Dashboard = ({ title, description, children }: Props) => {
       />
       <div className="h-screen flex bg-white dark:bg-gray-800">
         <AppSidebar />
-        <div className="flex-grow">
-          <AppHeader />
-          <main
-            className="bg-gray-100 dark:bg-gray-700 w-full rounded-t-2xl flex flex-col shadow-inner"
-            style={{ minHeight: 'calc(100vh - 80px)' }}
-          >
-            {children}
-          </main>
-        </div>
+        <SearchProvider>
+          <div className="flex-grow">
+            <AppHeader />
+            <main
+              className="bg-gray-100 dark:bg-gray-700 w-full rounded-t-2xl flex flex-col shadow-inner"
+              style={{ minHeight: 'calc(100vh - 80px)' }}
+            >
+              {children}
+            </main>
+          </div>
+        </SearchProvider>
         <AppRightBar />
       </div>
     </>

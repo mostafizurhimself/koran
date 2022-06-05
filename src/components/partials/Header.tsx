@@ -1,5 +1,5 @@
 import React from 'react';
-import { User } from 'react-feather';
+import { FiUser } from 'react-icons/fi';
 
 const Header = () => {
   return (
@@ -23,7 +23,7 @@ const Header = () => {
         <span className="mx-4 lg:mx-6 font-light">|</span>
         <button type="button" className="text-sm flex items-center hover:text-primary-500">
           <span className="mr-2">My Account</span>
-          <User height={20} />
+          <FiUser size={20} />
         </button>
       </div>
     </header>

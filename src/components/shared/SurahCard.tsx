@@ -1,19 +1,23 @@
+import React from 'react';
+import { useAppDispatch } from '@/hooks/use-app-dispatch';
 import { Surah } from '@/types';
 import { useRouter } from 'next/router';
-import { useState, MouseEvent } from 'react';
+import { MouseEvent } from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
+import { toggleFavourite } from '@/store/global/globalSlice';
 
 type Props = {
   surah: Omit<Surah, 'edition' | 'ayahs'>;
+  isFavourite: boolean;
 };
 
-const SurahCard = ({ surah }: Props) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+const SurahCard = ({ surah, isFavourite }: Props) => {
   const router = useRouter();
+  const dispatch = useAppDispatch();
 
-  const toggleFavorite = (e: MouseEvent) => {
+  const toggle = (e: MouseEvent) => {
     e.stopPropagation();
-    setIsFavorite(!isFavorite);
+    dispatch(toggleFavourite(surah.number));
   };
 
   const handleCardClick = (e: MouseEvent) => {
@@ -26,8 +30,8 @@ const SurahCard = ({ surah }: Props) => {
         <span className="h-7 w-7 flex items-center justify-center bg-primary-50 dark:bg-primary-500 text-primary-500 dark:text-white text-sm rounded-full">
           {surah.number}
         </span>
-        <button onClick={toggleFavorite} className="h-7 w-7 flex items-center justify-end rounded-full">
-          {isFavorite ? (
+        <button onClick={toggle} className="h-7 w-7 flex items-center justify-end rounded-full">
+          {isFavourite ? (
             <AiFillHeart size={22} className="text-primary-500" />
           ) : (
             <AiOutlineHeart size={22} className="dark:text-primary-500" />

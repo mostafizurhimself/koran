@@ -7,6 +7,7 @@ import { getSidebarState, setSidebarState } from '@/store/sidebar/sidebarSlice';
 import { useAppDispatch } from '@/hooks/use-app-dispatch';
 import { FiHome, FiHeart, FiSettings, FiXCircle } from 'react-icons/fi';
 import { AiOutlineRead } from 'react-icons/ai';
+import Link from 'next/link';
 
 const menu: SidebarMenu[] = [
   {
@@ -34,9 +35,11 @@ const AppSidebar = () => {
     <>
       <div className="hidden lg:block w-20 shrink-0">
         <div className="h-20 flex justify-center items-center">
-          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-primary-500 text-white">
-            <AiOutlineRead size={20} />
-          </div>
+          <Link href="/dashboard">
+            <a className="h-10 w-10 flex items-center justify-center rounded-full bg-primary-500 text-white">
+              <AiOutlineRead size={20} />
+            </a>
+          </Link>
         </div>
         <div className="mt-4">
           {menu.map((item, index) => (

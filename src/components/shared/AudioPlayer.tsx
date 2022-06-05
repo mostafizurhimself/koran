@@ -4,6 +4,7 @@ import { AiFillBackward, AiFillForward, AiOutlineUnorderedList } from 'react-ico
 import { BsPauseFill, BsPlayFill } from 'react-icons/bs';
 import { FiRepeat } from 'react-icons/fi';
 import styles from '@/assets/scss/modules/AudioPlayer.module.scss';
+import classNames from 'classnames';
 
 type Props = {
   surah: Surah;
@@ -47,7 +48,7 @@ const AudioPlayer = ({ surah, start, end, setCurrentAyah }: Props) => {
     return `${returnedMinutes}:${returnedSeconds}`;
   };
 
-  // Auto play next ayah
+  // Play the next ayah
   const playNextAudio = () => {
     if (audioElement.current) {
       // Get current ayah number
@@ -75,11 +76,36 @@ const AudioPlayer = ({ surah, start, end, setCurrentAyah }: Props) => {
   // Stop the player
   const stopPlaying = () => {
     if (audioElement.current) {
+      audioElement.current.setAttribute('data-ayah', start.toString());
       audioElement.current.src = getCurrentAudioUrl(start);
       audioElement.current.load();
       audioElement.current.pause();
       setCurrentAyah(start);
       setIsPlaying(false);
+    }
+  };
+
+  // Play the previous ayah
+  const playPreviousAudio = () => {
+    if (audioElement.current) {
+      // Get current ayah number & stop the player when it reaches the start of the audio & auto play is disabled
+      const currentAyah = audioElement.current.getAttribute('data-ayah') || start.toString();
+      if (parseInt(currentAyah) === start && !autoPlay) {
+        stopPlaying();
+        return;
+      }
+      // Get previous ayah number
+      const previousAyah = parseInt(currentAyah) > start ? parseInt(currentAyah) - 1 : end;
+      // Set the previous ayah to the data-ayah attribute
+      audioElement.current.setAttribute('data-ayah', previousAyah.toString());
+      // Set current ayah to the parent state
+      setCurrentAyah(previousAyah);
+      // Set the previous ayah audio url
+      audioElement.current.src = getCurrentAudioUrl(previousAyah);
+      // Load the previous ayah audio
+      audioElement.current.load();
+      // Play the previous ayah audio
+      audioElement.current.play();
     }
   };
 
@@ -149,10 +175,16 @@ const AudioPlayer = ({ surah, start, end, setCurrentAyah }: Props) => {
           />
         </div>
         <div className="flex items-center justify-between">
-          <button className="text-gray-700 dark:text-white">
+          <button
+            onClick={() => setAutoPlay(!autoPlay)}
+            className={classNames(
+              'transition-colors duration-200 ease-in-out focus:outline-none focus:shadow-outline',
+              autoPlay ? 'text-primary-500' : 'text-gray-700 dark:text-white'
+            )}
+          >
             <FiRepeat size={18} />
           </button>
-          <button className="text-gray-700 dark:text-white">
+          <button type="button" onClick={() => playPreviousAudio()} className="text-gray-700 dark:text-white">
             <AiFillBackward size={25} />
           </button>
           <button
@@ -162,7 +194,7 @@ const AudioPlayer = ({ surah, start, end, setCurrentAyah }: Props) => {
           >
             {isPlaying ? <BsPauseFill size={25} /> : <BsPlayFill className="ml-[2px]" size={25} />}
           </button>
-          <button className="text-gray-700 dark:text-white">
+          <button type="button" onClick={() => playNextAudio()} className="text-gray-700 dark:text-white">
             <AiFillForward size={25} />
           </button>
           <button className="text-gray-700 dark:text-white">

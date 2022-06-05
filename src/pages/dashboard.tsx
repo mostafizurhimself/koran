@@ -1,10 +1,11 @@
+import React from 'react';
 import SurahList from '@/components/partials/SurahList';
 import AppLayout from '@/layouts/AppLayout';
 import { Tab } from '@headlessui/react';
 import { NextPage } from 'next';
 import Link from 'next/link';
-import { Fragment } from 'react';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
+import { Fragment } from 'react';
 import { FiVolume2 } from 'react-icons/fi';
 import { HiOutlineAnnotation } from 'react-icons/hi';
 
@@ -46,17 +47,18 @@ const Dashboard: NextPage = () => {
               </Link>
             </div>
           </div>
-          <Tab.Group>
+          <SurahList />
+          {/* <Tab.Group>
             <div className="flex justify-center">
               <Tab.List className="tab-list">
                 <Tab as={Fragment}>
                   {({ selected }) => <button className={selected ? 'tab active' : 'tab'}>Surah</button>}
                 </Tab>
                 <Tab as={Fragment}>
-                  {({ selected }) => <button className={selected ? 'tab active' : 'tab'}>Para</button>}
+                  {({ selected }) => <button className={selected ? 'tab active' : 'tab'}>Juz</button>}
                 </Tab>
                 <Tab as={Fragment}>
-                  {({ selected }) => <button className={selected ? 'tab active' : 'tab'}>Juz</button>}
+                  {({ selected }) => <button className={selected ? 'tab active' : 'tab'}>Page</button>}
                 </Tab>
               </Tab.List>
             </div>
@@ -64,10 +66,14 @@ const Dashboard: NextPage = () => {
               <Tab.Panel>
                 <SurahList />
               </Tab.Panel>
-              <Tab.Panel className="">Content 2</Tab.Panel>
-              <Tab.Panel>Content 3</Tab.Panel>
+              <Tab.Panel className="">
+                <div className="text-center">Coming Soon...</div>
+              </Tab.Panel>
+              <Tab.Panel>
+                <div className="text-center">Coming Soon</div>
+              </Tab.Panel>
             </Tab.Panels>
-          </Tab.Group>
+          </Tab.Group> */}
         </div>
       </OverlayScrollbarsComponent>
     </AppLayout>
