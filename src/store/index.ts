@@ -3,17 +3,19 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { sidebarSlice } from './sidebar/sidebarSlice';
+import { settingSlice } from './settings/settingSlice';
 
 const rootReducer = combineReducers({
   global: globalSlice.reducer,
   sidebar: sidebarSlice.reducer,
+  settings: settingSlice.reducer,
 });
 
 const persistConfig = {
   timeout: 1000,
   key: 'koran-app',
   storage,
-  whitelist: ['global'],
+  whitelist: ['global', 'settings'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
