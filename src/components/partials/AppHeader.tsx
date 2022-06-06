@@ -69,14 +69,14 @@ const AppHeader = ({ title }: Props) => {
         <button
           type="button"
           onClick={() => dispatch(setMode(mode === Mode.LISTENING ? Mode.READING : Mode.LISTENING))}
-          className="ml-3 h-8 w-8 flex justify-center items-center border hover:border-primary-500 rounded-full text-gray-500 dark:text-white hover:text-primary-500 focus:border-2 focus:border-primary-500 transition-colors duration-300"
+          className="ml-3 h-8 w-8 flex justify-center items-center border hover:border-primary-500 rounded-full text-gray-500 dark:text-white hover:text-primary-500 dark:hover:text-primary-500 focus:border-2 focus:border-primary-500 transition-colors duration-300"
         >
           {mode === 'reading' ? <FiHeadphones height={16} /> : <BsBook height={16} />}
         </button>
         <button
           type="button"
           onClick={() => toggleTheme()}
-          className="ml-3 h-8 w-8 flex justify-center items-center border hover:border-primary-500 rounded-full text-gray-500 dark:text-white hover:text-primary-500 focus:border-2 focus:border-primary-500 transition-all duration-300"
+          className="ml-3 h-8 w-8 flex justify-center items-center border hover:border-primary-500 rounded-full text-gray-500 dark:text-white hover:text-primary-500 dark:hover:text-primary-500 focus:border-2 focus:border-primary-500 transition-all duration-300"
         >
           {theme === 'dark' ? <FiSun height={16} /> : <FiMoon height={16} />}
         </button>
