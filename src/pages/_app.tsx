@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
 
           <meta name='twitter:card' content='summary' />
-          <meta name='twitter:url' content='https://koran-co.vercel.app' />
+          <meta name='twitter:url' content='https://koran-co.vercel.app/dashboard' />
           <meta name='twitter:title' content='Koran' />
           <meta name='twitter:description' content='Koran App for readers and listeners' />
           <meta name='twitter:image' content='https://koran-co.vercel.app/icons/android-launchericon-192-192.png' />
@@ -61,7 +61,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <meta property='og:title' content='Koran' />
           <meta property='og:description' content='Koran App for readers and listeners' />
           <meta property='og:site_name' content='Koran' />
-          <meta property='og:url' content='https://koran-co.vercel.app' />
+          <meta property='og:url' content='https://koran-co.vercel.app/dashboard' />
           <meta property='og:image' content='https://koran-co.vercel.app/icons/apple-touch-icon.png' />
 
           <link rel='apple-touch-startup-image' href='/images/apple_splash_2048.png' sizes='2048x2732' />
