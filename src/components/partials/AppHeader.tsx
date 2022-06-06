@@ -41,6 +41,7 @@ const AppHeader = ({ title }: Props) => {
   };
 
   // Debounce search input change
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedChangeHandler = useCallback(debounce(onSearchChange, 300), []);
 
   return (

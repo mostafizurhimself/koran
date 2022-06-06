@@ -28,6 +28,7 @@ const TranslationList = ({ translations }: Props) => {
 
   useEffect(() => {
     dispatch(setTranslation(selected));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
 
   return (
