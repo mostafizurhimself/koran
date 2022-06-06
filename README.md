@@ -13,7 +13,7 @@ cd koran
 yarn install
 ```
 
-Copy the `.env.example` file and rename it to `.env.loca`.
+Copy the `.env.example` file and rename it to `.env.local`.
 
 ```
 cp .env.example .env.local
