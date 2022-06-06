@@ -13,7 +13,11 @@ import { BsBook } from 'react-icons/bs';
 import { FiHeadphones, FiMoon, FiSun } from 'react-icons/fi';
 import { HiMenuAlt2 } from 'react-icons/hi';
 
-const AppHeader = () => {
+type Props = {
+  title: string;
+};
+
+const AppHeader = ({ title }: Props) => {
   const theme = useAppSelector(getTheme);
   const mode = useAppSelector(getMode);
   const dispatch = useAppDispatch();
@@ -45,12 +49,15 @@ const AppHeader = () => {
         <button type="button" onClick={() => dispatch(setSidebarState(true))}>
           <HiMenuAlt2 size={25} className="mr-2 text-gray-700 dark:text-gray-100 inline-block lg:hidden" />
         </button>
-        <Link href="/dashboard">
-          <a>
-            <span className="text-2xl text-primary-500 font-semibold">Koran</span>
-            <span className="text-gray-700 dark:text-white">.co</span>
-          </a>
-        </Link>
+        <div className="hidden lg:inline-block">
+          <Link href="/dashboard">
+            <a>
+              <span className="text-2xl text-primary-500 font-semibold">Koran</span>
+              <span className="text-gray-700 dark:text-white">.co</span>
+            </a>
+          </Link>
+        </div>
+        <h2 className="inline-block lg:hidden text-xl font-medium">{title}</h2>
       </div>
       {router.asPath === '/dashboard' && (
         <div className="hidden md:block md:w-96">

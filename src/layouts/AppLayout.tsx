@@ -33,7 +33,7 @@ const Dashboard = ({ title, description, children }: Props) => {
         <AppSidebar />
         <SearchProvider>
           <div className="flex-grow">
-            <AppHeader />
+            <AppHeader title={title} />
             <main
               className="bg-gray-100 dark:bg-gray-700 w-full rounded-t-2xl flex flex-col shadow-inner"
               style={{ minHeight: 'calc(100vh - 80px)' }}

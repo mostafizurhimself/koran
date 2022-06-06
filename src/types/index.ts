@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface SidebarMenu {
-  name: string;
+  label: string;
   icon: React.ReactElement;
   href: string;
 }

@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import { MouseEvent } from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { toggleFavourite } from '@/store/global/globalSlice';
+import { useAppSelector } from '@/hooks/use-app-selector';
+import { getReciter, getTranslation } from '@/store/settings/settingSlice';
 
 type Props = {
   surah: Omit<Surah, 'edition' | 'ayahs'>;
@@ -14,6 +16,8 @@ type Props = {
 const SurahCard = ({ surah, isFavourite }: Props) => {
   const router = useRouter();
   const dispatch = useAppDispatch();
+  const reciter = useAppSelector(getReciter);
+  const translation = useAppSelector(getTranslation);
 
   const toggle = (e: MouseEvent) => {
     e.stopPropagation();
@@ -21,7 +25,7 @@ const SurahCard = ({ surah, isFavourite }: Props) => {
   };
 
   const handleCardClick = (e: MouseEvent) => {
-    router.push(`/surah/${surah.number}`);
+    router.push(`/surah/${surah.number}/${reciter.identifier},${translation.identifier}`);
   };
 
   return (

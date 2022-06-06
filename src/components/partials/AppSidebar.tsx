@@ -11,17 +11,17 @@ import Link from 'next/link';
 
 const menu: SidebarMenu[] = [
   {
-    name: 'Dashboard',
+    label: 'Dashboard',
     icon: <FiHome size={20} />,
     href: '/dashboard',
   },
   {
-    name: 'Favorite',
+    label: 'Favorite',
     icon: <FiHeart size={20} />,
     href: '/favorites',
   },
   {
-    name: 'Settings',
+    label: 'Settings',
     icon: <FiSettings size={20} />,
     href: '/settings',
   },
@@ -76,7 +76,20 @@ const AppSidebar = () => {
         leaveTo="-translate-x-full"
       >
         <div className="h-screen w-60 bg-white dark:bg-gray-800 rounded-r-2xl shadow-lg text-gray-800 dark:text-white fixed inset-0 z-50">
-          <p>Sidebar</p>
+          <div className="h-20 flex items-center px-6 bg-primary-500 rounded-tr-2xl">
+            <div className="h-10 w-10 flex items-center justify-center rounded-full border-[1.5px] border-white text-white">
+              <AiOutlineRead size={20} />
+            </div>
+            <div>
+              <span className="text-2xl text-white font-semibold ml-3">Koran</span>
+              <span className="text-white">.co</span>
+            </div>
+          </div>
+          <div>
+            {menu.map((item, index) => (
+              <AppSidebarMenu menu={item} showLabel={true} key={index} />
+            ))}
+          </div>
           <div className="absolute top-0 right-0 -mr-10 pt-2">
             <button
               type="button"
