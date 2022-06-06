@@ -17,7 +17,7 @@ const Header = () => {
             About
           </a>
           <a href="#" className="mx-4 lg:mx-6 hover:text-primary-500 hover:font-medium">
-            Donate
+            Support
           </a>
         </nav>
         <span className="mx-4 lg:mx-6 font-light">|</span>
