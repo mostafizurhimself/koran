@@ -18,7 +18,7 @@ const menu: SidebarMenu[] = [
   {
     label: 'Favorite',
     icon: <FiHeart size={20} />,
-    href: '/favorites',
+    href: '/favourites',
   },
   {
     label: 'Settings',
