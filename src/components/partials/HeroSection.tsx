@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
 import Button from '@/components/shared/Button';
+import { useRouter } from 'next/router';
 
 const HeroSection = () => {
+  const router = useRouter();
+
   return (
     <div className="h-auto flex items-center bg-primary-50">
       <div className="container flex flex-col lg:flex-row items-center">
@@ -14,8 +17,10 @@ const HeroSection = () => {
             guidance and direction for mankind
           </p>
           <div className="mt-6">
-            <Button className="px-6 py-3">Read Quran</Button>
-            <Button outline={true} className="px-6 py-3 ml-2">
+            <Button className="px-6 py-3" onClick={(e) => router.push('/dashboard')}>
+              Read Quran
+            </Button>
+            <Button outline={true} className="px-6 py-3 ml-2" onClick={(e) => router.push('/dashboard')}>
               Listen Quran
             </Button>
           </div>

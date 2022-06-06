@@ -6,9 +6,10 @@ type Props = {
   type?: 'submit' | 'button';
   outline?: boolean;
   children: string | React.ReactNode | React.ReactNode[];
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-const Button = ({ className, type = 'button', outline = false, children }: Props) => {
+const Button = ({ className, type = 'button', outline = false, children, onClick }: Props) => {
   return (
     <button
       className={classNames(
@@ -19,6 +20,7 @@ const Button = ({ className, type = 'button', outline = false, children }: Props
           : 'bg-primary-500 hover:bg-primary-600 text-white focus:outline focus:outline-2 focus:outline-primary-500 outline-offset-2'
       )}
       type={type}
+      onClick={onClick}
     >
       {children}
     </button>
