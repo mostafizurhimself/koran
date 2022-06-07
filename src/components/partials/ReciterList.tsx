@@ -19,7 +19,7 @@ const ReciterList = ({ reciters }: Props) => {
   );
   const [query, setQuery] = useState('');
 
-  const filteredPeople =
+  const filteredOption =
     query === ''
       ? reciters
       : reciters.filter((reciter) =>
@@ -51,13 +51,13 @@ const ReciterList = ({ reciters }: Props) => {
           leaveTo="opacity-0"
           afterLeave={() => setQuery('')}
         >
-          <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white dark:bg-gray-800 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-            {filteredPeople.length === 0 && query !== '' ? (
+          <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white dark:bg-gray-800 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-10">
+            {filteredOption.length === 0 && query !== '' ? (
               <div className="relative cursor-default select-none py-2 px-4 text-gray-700 dark:text-white">
                 Nothing found.
               </div>
             ) : (
-              filteredPeople.map((reciter) => (
+              filteredOption.map((reciter) => (
                 <Combobox.Option
                   key={reciter.identifier}
                   className={({ active }) =>

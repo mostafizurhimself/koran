@@ -29,7 +29,7 @@ const HeroSection = () => {
             </Button>
           </div>
         </div>
-        <Image src="/images/hero.png" height={600} width={600} />
+        <Image src="/images/hero.png" height={600} width={600} alt="hero-section-image" />
       </div>
     </div>
   );

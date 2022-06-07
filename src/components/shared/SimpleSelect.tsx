@@ -44,7 +44,7 @@ const SimpleSelect: FunctionComponent<SimpleSelectProps> = ({
         name={`simple-select-${componentId}`}
         value={defaultValue}
         className={classNames(
-          'w-full px-3 py-1 text-xs border rounded bg-transparent text-gray-800 dark:text-white',
+          'w-full px-3 py-2 text-xs border rounded-lg bg-transparent text-gray-800 dark:text-white',
           error ? errorClasses : validClasses,
           className
         )}

@@ -6,7 +6,7 @@ const AboutSection = () => {
     <div className="container">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center">
         <div className="w-full">
-          <Image src="/images/about-section.png" width={500} height={500} />
+          <Image src="/images/about-section.png" width={500} height={500} alt="about-section-image" />
         </div>
         <div>
           <h2 className="text-3xl font-semibold">

@@ -56,3 +56,10 @@ export interface SelectOption {
   label: string;
   value: string;
 }
+
+export enum FontSize {
+  SMALL = 'small',
+  NORMAL = 'normal',
+  LARGE = 'large',
+  EXTRA_LARGE = 'extraLarge',
+}

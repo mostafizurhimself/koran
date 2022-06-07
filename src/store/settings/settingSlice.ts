@@ -1,11 +1,13 @@
 import type { RootState } from '@/store';
-import { Edition } from '@/types';
+import { Edition, FontSize } from '@/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 // Define a type for the slice state
 interface GlobalState {
   translation: Edition;
   reciter: Edition;
+  arabicFontSize: FontSize;
+  translationFontSize: FontSize;
 }
 
 // Define the initial state using that type
@@ -28,6 +30,8 @@ const initialState: GlobalState = {
     type: 'versebyverse',
     direction: null,
   },
+  arabicFontSize: FontSize.LARGE,
+  translationFontSize: FontSize.NORMAL,
 };
 
 export const settingSlice = createSlice({
@@ -41,11 +45,19 @@ export const settingSlice = createSlice({
     setReciter: (state: GlobalState, action: PayloadAction<Edition>) => {
       state.reciter = action.payload;
     },
+    setArabicFontSize: (state: GlobalState, action: PayloadAction<FontSize>) => {
+      state.arabicFontSize = action.payload;
+    },
+    setTranslationFontSize: (state: GlobalState, action: PayloadAction<FontSize>) => {
+      state.translationFontSize = action.payload;
+    },
   },
 });
 
-export const { setTranslation, setReciter } = settingSlice.actions;
+export const { setTranslation, setReciter, setArabicFontSize, setTranslationFontSize } = settingSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const getTranslation = (state: RootState) => state.settings.translation;
 export const getReciter = (state: RootState) => state.settings.reciter;
+export const getArabicFontSize = (state: RootState) => state.settings.arabicFontSize;
+export const getTranslationFontSize = (state: RootState) => state.settings.translationFontSize;
