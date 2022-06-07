@@ -26,3 +26,5 @@ yarn dev
 ```
 
 Now your application is running on http://localhost:3000.
+
+![Preview](https://raw.githubusercontent.com/MdMostaFizurRahaman/koran/develop/preview.png)
