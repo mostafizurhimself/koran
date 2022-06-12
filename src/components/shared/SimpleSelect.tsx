@@ -54,21 +54,11 @@ const SimpleSelect: FunctionComponent<SimpleSelectProps> = ({
             {placeholder}
           </option>
         )}
-        {options.map((option, index) =>
-          typeof option[valueKey] == 'object' ? (
-            <optgroup label={option[labelKey]} key={index}>
-              {option[valueKey].map((optgroup: any, optIndex: any) => (
-                <option key={optIndex} value={optgroup[valueKey]}>
-                  {optgroup[labelKey]}
-                </option>
-              ))}
-            </optgroup>
-          ) : (
-            <option key={index} value={option[valueKey]}>
-              {option[labelKey]}
-            </option>
-          )
-        )}
+        {options.map((option, index) => (
+          <option className="bg-white dark:bg-gray-800" key={index} value={option[valueKey]}>
+            {option[labelKey]}
+          </option>
+        ))}
       </select>
       {error && (
         <p className="text-xs text-red-600" id={`simple-select-error-${componentId}`}>

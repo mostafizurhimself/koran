@@ -3,7 +3,7 @@ import { FiUser } from 'react-icons/fi';
 
 const Header = () => {
   return (
-    <header className="shadow">
+    <header className="shadow-sm sticky top-0 bg-white z-20">
       <div className="container h-16 flex items-center ">
         <h1>
           <span className="text-2xl text-primary-500 font-semibold">Koran</span>
