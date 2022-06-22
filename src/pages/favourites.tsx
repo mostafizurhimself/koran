@@ -5,7 +5,7 @@ import { getFavourites } from '@/store/global/globalSlice';
 import { Surah } from '@/types';
 import { NextPage } from 'next';
 import React from 'react';
-const surahs = require('@/public/data/surahs.json') as Omit<Surah, 'edition' | 'ayahs'>[];
+const surahs = require('@/public/data/surah.json') as Omit<Surah, 'edition' | 'ayahs'>[];
 
 const Favourites: NextPage = () => {
   const favourites = useAppSelector(getFavourites);

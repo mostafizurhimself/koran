@@ -6,8 +6,8 @@ import { Mode, Surah } from '@/types';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { FiMoreVertical } from 'react-icons/fi';
-import Button from '../shared/Button';
-const surahs = require('@/public/data/surahs.json') as Omit<Surah, 'edition' | 'ayahs'>[];
+import Button from '@/components/shared/Button';
+const surahs = require('@/public/data/surah.json') as Omit<Surah, 'edition' | 'ayahs'>[];
 
 const ReadSection = () => {
   const [search, setSearch] = useState('');
@@ -31,10 +31,8 @@ const ReadSection = () => {
 
   return (
     <div className="container mt-24">
-      <h2 className="font-semibold text-4xl text-center">Read Quran with Translation</h2>
-      <div className="text-center mt-2">
-        <div className="inline-block w-10 h-1 bg-primary-500 rounded-full"></div>
-      </div>
+      <h2 className="font-semibold text-4xl text-center text-gray-800">Read Quran with Translation</h2>
+
       <div className="mt-12 grid grid-cols-4 gap-6">
         {surahs
           .filter((surah) => surah.number <= count)
@@ -49,7 +47,7 @@ const ReadSection = () => {
                   <span className="h-7 w-7 flex items-center justify-center bg-primary-50 text-primary-500 text-sm rounded-full">
                     {surah.number}
                   </span>
-                  <button className="group-hover:text-white">
+                  <button type="button" className="text-gray-800 group-hover:text-white">
                     <FiMoreVertical />
                   </button>
                 </div>

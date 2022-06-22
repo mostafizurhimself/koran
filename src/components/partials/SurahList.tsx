@@ -4,7 +4,7 @@ import SurahCard from '@/components/shared/SurahCard';
 import { useAppSelector } from '@/hooks/use-app-selector';
 import { getFavourites } from '@/store/global/globalSlice';
 import { SearchContext, SearchContextType } from '@/context/SearchContext';
-const surahs = require('@/public/data/surahs.json') as Omit<Surah, 'edition' | 'ayahs'>[];
+const surahs = require('@/public/data/surah.json') as Omit<Surah, 'edition' | 'ayahs'>[];
 
 const SurahList = () => {
   const favourites = useAppSelector(getFavourites);

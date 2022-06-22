@@ -12,7 +12,7 @@ const AboutSection = () => {
         </div>
         <div className="order-1 md:order-2 py-10 md:py-0">
           <h2 className="text-3xl font-semibold">
-            About <span className="text-primary-500">Koran</span>
+            <span className="text-gray-800">About</span> <span className="text-primary-500">Koran</span>
             <span className="text-base">.co</span>
           </h2>
           <div className="inline-block w-10 h-1 bg-primary-500 rounded-full"></div>

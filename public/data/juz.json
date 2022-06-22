@@ -1,0 +1,470 @@
+[
+  {
+    "number": 1,
+    "name": "آلم",
+    "englishName": "Alīf-Lām-Mīm",
+    "englishNameTranslation": "Allah Knows Best",
+    "start": {
+      "surahNumber": 1,
+      "verse": 1,
+      "name": "Al-Fatiha"
+    },
+    "end": {
+      "surahNumber": 2,
+      "verse": 141,
+      "name": "Al-Baqara"
+    }
+  },
+  {
+    "number": 2,
+    "name": "سَيَقُولُ",
+    "englishName": "Sayaqūlu",
+     "englishNameTranslation": "Will (they) say",
+    "start": {
+      "surahNumber": 2,
+      "verse": 142,
+      "name": "Al-Baqara"
+    },
+    "end": {
+      "surahNumber": 2,
+      "verse": 252,
+      "name": "Al-Baqara"
+    }
+  },
+  {
+    "number": 3,
+    "name": "تِلْكَ ٱلْرُّسُلُ",
+    "englishName": "Tilka ’r-Rusulu",
+     "englishNameTranslation": "These are the Messengers",
+    "start": {
+      "surahNumber": 2,
+      "verse": 253,
+      "name": "Al-Baqara"
+    },
+    "end": {
+      "surahNumber": 3,
+      "verse": 92,
+      "name": "Aal-Imran"
+    }
+  },
+  {
+    "number": 4,
+    "name": "لن تنالوا",
+    "englishName": "Lan Tana Lu",
+     "englishNameTranslation": "You will not get",
+    "start": {
+      "surahNumber": 3,
+      "verse": 93,
+      "name": "Aal-Imran"
+    },
+    "end": {
+      "surahNumber": 4,
+      "verse": 23,
+      "name": "An-Nisaa'"
+    }
+  },
+  {
+    "number": 5,
+    "name": "وَٱلْمُحْصَنَاتُ",
+    "englishName": "Wa’l-muḥṣanātu",
+     "englishNameTranslation": "And prohibited are the ones who are married",
+    "start": {
+      "surahNumber": 4,
+      "verse": 24,
+      "name": "An-Nisaa'"
+    },
+    "end": {
+      "surahNumber": 4,
+      "verse": 147,
+      "name": "An-Nisaa'"
+    }
+  },
+  {
+    "number": 6,
+    "name": "لَا يُحِبُّ ٱللهُ",
+    "englishName": "Lā yuḥibbu-’llāhu",
+     "englishNameTranslation": "Allah does not like",
+    "start": {
+      "surahNumber": 4,
+      "verse": 148,
+      "name": "An-Nisaa'"
+    },
+    "end": {
+      "surahNumber": 5,
+      "verse": 81,
+      "name": "Al-Ma'ida"
+    }
+  },
+  {
+    "number": 7,
+    "name": "وَإِذَا سَمِعُوا",
+    "englishName": "Wa ’Idha Samiʿū",
+     "englishNameTranslation": "And when they hear",
+    "start": {
+      "surahNumber": 5,
+      "verse": 82,
+      "name": "Al-Ma'ida"
+    },
+    "end": {
+      "surahNumber": 6,
+      "verse": 110,
+      "name": "Al-An'am"
+    }
+  },
+  {
+    "number": 8,
+    "name": "وَلَوْ أَنَّنَا",
+    "englishName": "Wa-law annanā",
+     "englishNameTranslation": "And (even) if (that) we had",
+    "start": {
+      "surahNumber": 6,
+      "verse": 111,
+      "name": "Al-An'am"
+    },
+    "end": {
+      "surahNumber": 7,
+      "verse": 87,
+      "name": "Al-A'raf"
+    }
+  },
+  {
+    "number": 9,
+    "name": "قَالَ ٱلْمَلَأُ",
+    "englishName": "Qāla ’l-mala’u",
+     "englishNameTranslation": "Said the chiefs (eminent ones)",
+    "start": {
+      "surahNumber": 7,
+      "verse": 88,
+      "name": "Al-A'raf"
+    },
+    "end": {
+      "surahNumber": 8,
+      "verse": 40,
+      "name": "Al-Anfal"
+    }
+  },
+  {
+    "number": 10,
+    "name": "وَٱعْلَمُواْ",
+    "englishName": "Wa-’aʿlamū",
+     "englishNameTranslation": "And (you) know",
+    "start": {
+      "surahNumber": 8,
+      "verse": 41,
+      "name": "Al-Anfal"
+    },
+    "end": {
+      "surahNumber": 9,
+      "verse": 92,
+      "name": "Al-Tawba"
+    }
+  },
+  {
+    "number": 11,
+    "name": "يَعْتَذِرُونَ",
+    "englishName": "Yaʿtazerūn",
+     "englishNameTranslation": "Only the way (for blame)",
+    "start": {
+      "surahNumber": 9,
+      "verse": 93,
+      "name": "Al-Tawba"
+    },
+    "end": {
+      "surahNumber": 11,
+      "verse": 5,
+      "name": "Hud"
+    }
+  },
+  {
+    "number": 12,
+    "name": "وَمَا مِنْ دَآبَّةٍ",
+    "englishName": "Wa mā min dābbatin",
+     "englishNameTranslation": "And there is no creature",
+    "start": {
+      "surahNumber": 11,
+      "verse": 6,
+      "name": "Hud"
+    },
+    "end": {
+      "surahNumber": 12,
+      "verse": 52,
+      "name": "Yusuf"
+    }
+  },
+  {
+    "number": 13,
+    "name": "وَمَا أُبَرِّئُ",
+    "englishName": "Wa mā ubarri’u",
+     "englishNameTranslation": "And I do not acquit",
+    "start": {
+      "surahNumber": 12,
+      "verse": 53,
+      "name": "Yusuf"
+    },
+    "end": {
+      "surahNumber": 14,
+      "verse": 52,
+      "name": "Ibrahim"
+    }
+  },
+  {
+    "number": 14,
+    "name": "رُبَمَا",
+    "englishName": "Rubamā",
+     "englishNameTranslation": "Perhaps",
+    "start": {
+      "surahNumber": 15,
+      "verse": 1,
+      "name": "Al-Hijr"
+    },
+    "end": {
+      "surahNumber": 16,
+      "verse": 128,
+      "name": "An-Nahl"
+    }
+  },
+  {
+    "number": 15,
+    "name": "سُبْحَانَ ٱلَّذِى",
+    "englishName": "Subḥāna ’lladhī",
+     "englishNameTranslation": "Exalted is the One (Allahu ‘Azza wa-jalla) is who ",
+    "start": {
+      "surahNumber": 17,
+      "verse": 1,
+      "name": "Al-Israa"
+    },
+    "end": {
+      "surahNumber": 18,
+      "verse": 74,
+      "name": "Al-Kahf"
+    }
+  },
+  {
+    "number": 16,
+    "name": "قَالَ أَلَمْ",
+    "englishName": "Qāla ’alam",
+     "englishNameTranslation": "He (Al-Khidr) said: Did not",
+    "start": {
+      "surahNumber": 18,
+      "verse": 75,
+      "name": "Al-Kahf"
+    },
+    "end": {
+      "surahNumber": 20,
+      "verse": 135,
+      "name": "Ta-Ha"
+    }
+  },
+  {
+    "number": 17,
+    "name": "ٱقْتَرَبَ لِلْنَّاسِ",
+    "englishName": "Iqtaraba li’n-nāsi",
+     "englishNameTranslation": "Has (the time of) approached for Mankind (people)",
+    "start": {
+      "surahNumber": 21,
+      "verse": 1,
+      "name": "Al-Anbiya"
+    },
+    "end": {
+      "surahNumber": 22,
+      "verse": 78,
+      "name": "Al-Hajj"
+    }
+  },
+  {
+    "number": 18,
+    "name": "قَدْ أَفْلَحَ",
+    "englishName": "Qad ’aflaḥa",
+     "englishNameTranslation": "Indeed (Certainly) successful",
+    "start": {
+      "surahNumber": 23,
+      "verse": 1,
+      "name": "Al-Muminun"
+    },
+    "end": {
+      "surahNumber": 25,
+      "verse": 20,
+      "name": "Al-Furqan"
+    }
+  },
+  {
+    "number": 19,
+    "name": "وَقَالَ ٱلَّذِينَ",
+    "englishName": "Wa-qāla ’lladhīna", "englishNameTranslation": "And said those who",
+    "start": {
+      "surahNumber": 25,
+      "verse": 21,
+      "name": "Al-Furqan"
+    },
+    "end": {
+      "surahNumber": 27,
+      "verse": 55,
+      "name": "An-Naml"
+    }
+  },
+  {
+    "number": 20,
+    "name": "أَمَّنْ خَلَقَ",
+    "englishName": "’A’man Khalaqa", "englishNameTranslation": "Is He Who created",
+    "start": {
+      "surahNumber": 27,
+      "verse": 56,
+      "name": "An-Naml"
+    },
+    "end": {
+      "surahNumber": 29,
+      "verse": 45,
+      "name": "Al-Ankabut"
+    }
+  },
+  {
+    "number": 21,
+    "name": "أُتْلُ مَاأُوْحِیَ",
+    "englishName": "Otlu ma oohiya", "englishNameTranslation": "Recite, [O Muhammad], what has been revealed to you",
+    "start": {
+      "surahNumber": 29,
+      "verse": 46,
+      "name": "Al-Ankabut"
+    },
+    "end": {
+      "surahNumber": 33,
+      "verse": 30,
+      "name": "Al-Ahzab"
+    }
+  },
+  {
+    "number": 22,
+    "name": "وَمَنْ يَّقْنُتْ",
+    "englishName": "Wa-man yaqnut", "englishNameTranslation": "And whoever is obedient (devoutly obeys)",
+    "start": {
+      "surahNumber": 33,
+      "verse": 31,
+      "name": "Al-Ahzab"
+    },
+    "end": {
+      "surahNumber": 36,
+      "verse": 27,
+      "name": "Yasin"
+    }
+  },
+  {
+    "number": 23,
+    "name": "وَمَآ لي",
+    "englishName": "Wa-Mali", "englishNameTranslation": "And what happened to me",
+    "start": {
+      "surahNumber": 36,
+      "verse": 28,
+      "name": "Yasin"
+    },
+    "end": {
+      "surahNumber": 39,
+      "verse": 31,
+      "name": "Az-Zumar"
+    }
+  },
+  {
+    "number": 24,
+    "name": "فَمَنْ أَظْلَمُ",
+    "englishName": "Fa-man ’aẓlamu", "englishNameTranslation": "So who is more unjust",
+    "start": {
+      "surahNumber": 39,
+      "verse": 32,
+      "name": "Az-Zumar"
+    },
+    "end": {
+      "surahNumber": 41,
+      "verse": 46,
+      "name": "Fussilat"
+    }
+  },
+  {
+    "number": 25,
+    "name": "إِلَيْهِ يُرَدُّ",
+    "englishName": "Ilayhi yuraddu", "englishNameTranslation": "To Him (Allahu Subhanahu wa-Ta'ala) alone is attributed",
+    "start": {
+      "surahNumber": 41,
+      "verse": 47,
+      "name": "Fussilat"
+    },
+    "end": {
+      "surahNumber": 45,
+      "verse": 37,
+      "name": "Al-Jathiya"
+    }
+  },
+  {
+    "number": 26,
+    "name": "حم",
+    "englishName": "Ḥā’ Mīm", "englishNameTranslation": "Known to Allah or Ha Meem",
+    "start": {
+      "surahNumber": 46,
+      "verse": 1,
+      "name": "Al-Ahqaf"
+    },
+    "end": {
+      "surahNumber": 51,
+      "verse": 30,
+      "name": "Az-Zariyat"
+    }
+  },
+  {
+    "number": 27,
+    "name": "قَالَ فَمَا خَطْبُكُم",
+    "englishName": "Qāla fa-mā khaṭbukum", "englishNameTranslation": "He (Ibrahim A.S.) said: 'Then what is your business (mission) here'"	,
+    "start": {
+      "surahNumber": 51,
+      "verse": 31,
+      "name": "Az-Zariyat"
+    },
+    "end": {
+      "surahNumber": 57,
+      "verse": 29,
+      "name": "Al-Hadid"
+    }
+  },
+  {
+    "number": 28,
+    "name": "قَدْ سَمِعَ ٱللهُ",
+    "englishName": "Qad samiʿa ’llāhu", "englishNameTranslation": "Indeed has Allah heard",
+    "start": {
+      "surahNumber": 58,
+      "verse": 1,
+      "name": "Al-Mujadilah"
+    },
+    "end": {
+      "surahNumber": 66,
+      "verse": 12,
+      "name": "At-Tahrim"
+    }
+  },
+  {
+    "number": 29,
+    "name": "تَبَارَكَ ٱلَّذِى",
+    "englishName": "Tabāraka ’lladhī", "englishNameTranslation": "Blessed is He (Allah Subhanahu wa-Ta'ala)",
+    "start": {
+      "surahNumber": 67,
+      "verse": 1,
+      "name": "Al-Mulk"
+    },
+    "end": {
+      "surahNumber": 77,
+      "verse": 50,
+      "name": "Al-Mursalat"
+    }
+  },
+  {
+    "number": 30,
+    "name": "عَمَّ",
+    "englishName": "‘Amma", "englishNameTranslation": "About what",
+    "start": {
+      "surahNumber": 78,
+      "verse": 1,
+      "name": "An-Naba"
+    },
+    "end": {
+      "surahNumber": 114,
+      "verse": 6,
+      "name": "An-Nas"
+    }
+  }
+]
